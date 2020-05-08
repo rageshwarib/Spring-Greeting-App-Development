@@ -11,17 +11,17 @@ public class GreetingController {
     IGreetingService iGreetingService;
     @PostMapping("/addGreeting/{name}")
     public Greeting addGreeting(@PathVariable String name){
-        return new Greeting(name);
+        return iGreetingService.addGreeting(name);
     }
 
     @GetMapping("/getGreeting/{name}")
     public Greeting getGreeting(@PathVariable String name){
-        return new Greeting(name);
+        return iGreetingService.getGreeting(name);
     }
 
     @DeleteMapping("deleteGreeting/{name}")
     public String deleteGreeting(@PathVariable String name){
-        return "Greeting Deleted";
+        return iGreetingService.deleteGreeting(name);
     }
     @GetMapping("/")
     public String hello(){
