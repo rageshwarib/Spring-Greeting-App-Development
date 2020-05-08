@@ -1,5 +1,6 @@
 package com.bridgelabz.greetingapp.demo.service;
 
+import com.bridgelabz.greetingapp.demo.dto.GreetingDto;
 import com.bridgelabz.greetingapp.demo.model.Greeting;
 import org.springframework.stereotype.Service;
 
@@ -24,4 +25,11 @@ public class GreetingServiceImpl implements IGreetingService {
     public String deleteGreeting(String name) {
         return "Greeting Deleted";
     }
+
+    @Override
+    public Greeting updateGreeting(String firstname, String lastName) {
+        return new Greeting(firstname + " " + lastName);
+    }
+
+
 }
